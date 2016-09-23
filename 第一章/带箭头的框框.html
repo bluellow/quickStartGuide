@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用继承，带箭头的框框</title>
+
+    <style>
+        .callout{
+            width: 300px;;
+            color:inherit;
+            background-color: #ffb2ee;
+            position: relative;
+        }
+        .callout::before{
+            content:"";
+            position: absolute;
+            top:-0.4px;
+            left: 1px;
+            padding: .35em;
+            border: inherit;
+            border-right: 0;
+            border-bottom: 0;
+            bransform:rotate(45deg);
+            background-color: #ffb2ee;
+
+        }
+    </style>
+</head>
+<body>
+    <p>Your username</p>
+    <input type="text">
+    <div class="callout">
+        Only letters,numbers,underscores() and happcns allowed!
+    </div>
+</body>
+</html>
