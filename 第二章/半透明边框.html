@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>半透明边框</title>
+
+    <style>
+        body {
+            background: url('../images/241006.jpg');
+        }
+        .div_1{
+            /*------------------------------关键代码--------------------------*/
+            border: 10px solid hsla(0,0%,100%,0.4);
+            background-color: #fff;
+            background-clip: padding-box;
+            /*-----------------------------------------------------------------*/
+
+            /* styling */
+            max-width: 20em;
+            padding: 2em;
+            margin: 2em auto 0;
+            font: 100%/1.5 sans-serif;
+        }
+        section h1{
+            display: block;
+            margin: 0 auto;
+            color: #fff;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="div_1">
+        有的人走了就再也没回来过，所以，等待和犹豫才是这个世界上最无情的杀手。
+    </div>
+    <section>
+        <h1>改变background-clip的属性</h1>
+        <button class="button">padding-box</button>
+        <button class="button">content-box</button>
+        <button class="button">border-box</button>
+    </section>
+
+
+    <script src="../js/jquery-3.1.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                var self = this
+                $(".div_1").css({"background-clip":$(self).text()})
+            });
+        });
+    </script>
+</body>
+</html>
